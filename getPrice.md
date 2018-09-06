@@ -71,10 +71,10 @@ Content-Type: application/json; charset=utf-8
 |---|---|---|
 | data.products | array | список продуктов |
 | data.products.N.id | string | id товара (соответсвует коду товара из b2b) |
-| data.products.N.group | string | id товара (соответсвует коду товара из b2b) |
-| data.products.N.name | string | id товара (соответсвует коду товара из b2b) |
-| data.products.N.article | string | id товара (соответсвует коду товара из b2b) |
-| data.products.N.rest | string | id товара (соответсвует коду товара из b2b) |
-| data.products.N.price | array | id товара (соответсвует коду товара из b2b) |
-| data.products.N.rrprice | array | id товара (соответсвует коду товара из b2b) |
+| data.products.N.group | string | id категории товара |
+| data.products.N.name | string | Наименование товара |
+| data.products.N.article | string | SKU товара |
+| data.products.N.rest | string | Наличие товара на складе (▀ — мало, ▀▀ — достаточно, ▀▀▀ — много) |
+| data.products.N.price | number | Цена товара |
+| data.products.N.rrprice | string | Рекомендованная розничная цена |
 
