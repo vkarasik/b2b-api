@@ -75,7 +75,16 @@ Content-Type: application/json; charset=utf-8
 | data.products.N.group | string | id группы товара |
 | data.products.N.name | string | Наименование товара |
 | data.products.N.article | string | SKU (артикул) товара |
-| data.products.N.rest | string | Наличие товара на складе (▀ — мало, ▀▀ — достаточно, ▀▀▀ — много) |
+| data.products.N.rest | string | Наличие товара на складе ("▀" — мало, "▀▀" — достаточно, "▀▀▀" — много, "0" — товар не найден) |
 | data.products.N.price | number | Цена BYN с НДС |
 | data.products.N.rrprice | string | Рекомендованная розничная цена BYN с НДС |
 
+### Ответ при ошибке авторизации
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+```json
+{"data":"Access denied","code":"error"}
+```
