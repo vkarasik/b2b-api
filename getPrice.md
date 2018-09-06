@@ -88,3 +88,76 @@ Content-Type: application/json; charset=utf-8
 ```json
 {"data":"Access denied","code":"error"}
 ```
+
+### Ответ при запросе единственного неверного id
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+```json
+{
+    "data": "Products not found",
+    "code": "error"
+}
+```
+
+В случае если неверный **id** запрошен в массиве с верными, ответ будет как в случае успеха, но для неверного **id** вернется **"rest" :  "0"**
+
+### Пример запроса c неверным/несуществующим id
+
+```http
+POST /getPrice/
+Authorization: Basic
+```
+```json
+{
+    "id": ["SP00005504","SP00000000"]
+}
+```
+### Ответ в случае успеха
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+```json
+{
+    "data": {
+        "groups": [
+            {
+                "id": "1182",
+                "name": "Печатная техника",
+                "groups": [
+                    {
+                        "id": "1185",
+                        "name": "Расходные материалы",
+                        "groups": [
+                            {
+                                "id": "2411",
+                                "name": "Струйные картриджи"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "products": [
+            {
+                "id": "SP00005504",
+                "group": "2411",
+                "name": "Картридж CL-446XL &lt;MG2440, MG2540&gt;",
+                "article": "8284B001AA",
+                "rest": "▀",
+                "price": 46.7,
+                "rrprice": ""
+            },
+            {
+                "id": "SP0000000",
+                "rest": "0"
+            }
+        ]
+    },
+    "code": "ok"
+}
+```
