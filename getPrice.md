@@ -6,7 +6,7 @@
 
 |Параметр|Тип|Обязательный|Описание|
 |---|---|---|---|
-| id | array | нет | id товара (соответсвует коду товара из b2b) |
+| id | array &#124; array of strings | нет | id товара (соответсвует коду товара из b2b) |
 
 Запрос без параметров — возвращает полный актуальный прайс лист
 
@@ -25,7 +25,7 @@ Authorization: Basic
 ### Ответ в случае успеха
 
 ```http
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
 ```json
@@ -73,7 +73,7 @@ Content-Type: application/json; charset=utf-8
 | data.products.N.id | string | id товара (соответсвует коду товара из b2b) |
 | data.products.N.group | string | id категории товара |
 | data.products.N.name | string | Наименование товара |
-| data.products.N.article | string | SKU товара |
+| data.products.N.article | string | SKU (артикул) товара |
 | data.products.N.rest | string | Наличие товара на складе (▀ — мало, ▀▀ — достаточно, ▀▀▀ — много) |
 | data.products.N.price | number | Цена товара |
 | data.products.N.rrprice | string | Рекомендованная розничная цена |
