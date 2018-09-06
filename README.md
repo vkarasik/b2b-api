@@ -12,3 +12,6 @@ Authorization: Basic
 
 - [POST /getPrice/](getPrice.md)
     - Получение прайс-листа
+    
+ - [POST /addOrder/](addOrder.md)
+    - Добавление заказа
