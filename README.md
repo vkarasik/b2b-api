@@ -17,4 +17,4 @@ Authorization: Basic
     - Добавление заказа
     
 - [POST /getOrder/](getOrder.md)
-    - Добавление заказа
+    - Получение статуса заказа
