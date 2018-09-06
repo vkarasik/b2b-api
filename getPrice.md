@@ -69,12 +69,13 @@ Content-Type: application/json; charset=utf-8
 
 |Параметр|Тип|Описание|
 |---|---|---|
+| data.groups | array | список групп/подгрупп для запрошенных id |
 | data.products | array | список продуктов |
 | data.products.N.id | string | id товара (соответсвует коду товара из b2b) |
 | data.products.N.group | string | id категории товара |
 | data.products.N.name | string | Наименование товара |
 | data.products.N.article | string | SKU (артикул) товара |
 | data.products.N.rest | string | Наличие товара на складе (▀ — мало, ▀▀ — достаточно, ▀▀▀ — много) |
-| data.products.N.price | number | Цена товара |
+| data.products.N.price | number | Цена |
 | data.products.N.rrprice | string | Рекомендованная розничная цена |
 
