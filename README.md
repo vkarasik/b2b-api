@@ -14,3 +14,9 @@
     
 - [POST /getOrder/](getOrder.md)
     - Получение статуса заказа
+
+- [POST /delOrder/](delOrder.md)
+    - Отмена заказа
+
+- [POST /getInvoice/](getInvoice.md)
+    - Запрос счета на утвержденный заказ
