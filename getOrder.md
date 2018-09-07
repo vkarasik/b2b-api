@@ -59,11 +59,17 @@ Content-Type: application/json; charset=utf-8
 | data.N.order | string | Номер заказа |
 | data.N.dorder | string | Дата заказа |
 | data.N.status | string | Статус заказа |
-| data.N.sum | string | Сумма заказа |
+| data.N.sum | string | Сумма заказа BYN c НДС |
 | data.N.products.N.id | string | id товара |
 | data.N.products.N.name | string | Название товара |
-| data.N.products.N.qty | string | Количество зарезервированного товара |
+| data.N.products.N.qty | string | Количество зарезервированого товара |
 
+Возможные статусы `data.N.status` заказа
+
+- `"status": "N"` — Заказ отправлен и обрабатывается
+- `"status": "A"` — Заказ утвержден, товары `data.N.products`, в количестве `data.N.products.N.qty`, на сумму `data.N.sum` зарезервированы
+- `"status": "F"` — Запрошен счет на утвержденный заказ
+- `"status": "C"` — Заказ отменен
 
 ### Ответ при ошибке авторизации
 
@@ -75,7 +81,7 @@ Content-Type: application/json; charset=utf-8
 {"data":"Access denied","code":"error"}
 ```
 
-### Ответ при запросе с единственным неверным id
+### Ответ при запросе с единственным неверным номером заказа
 
 ```http
 HTTP/1.1 200 OK
@@ -83,44 +89,7 @@ Content-Type: application/json; charset=utf-8
 ```
 ```json
 {
-    "data": "Products not available",
+    "data": "Order not found",
     "code": "error"
-}
-```
-
-В случае если товар с неверным **id** отправлен в массиве с верными, ответ будет как в случае успеха, но товар с неверным **id** не попадет в заказ
-
-### Пример запроса c неверным/несуществующим id
-
-```http
-POST /getOrder/
-Authorization: Basic
-```
-```json
-{
-   "products":[
-      {
-         "id":"SP00009726",
-         "qty":1
-      },
-      {
-         "id":"SP00000000",
-         "qty":1
-      }
-   ]
-}
-```
-### Ответ в случае успеха
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-```
-```json
-{
-    "data": {
-        "order": 97011
-    },
-    "code": "ok"
 }
 ```
