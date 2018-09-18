@@ -23,7 +23,7 @@ Authorization: Basic
    "products":[
       {
          "id":"SP00009726",
-         "qty":1
+         "qty":"1"
       }
    ]
 }

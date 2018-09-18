@@ -8,9 +8,9 @@
 
 |Параметр|Тип|Обязательный|Описание|
 |---|---|---|---|
-| id | array &#124; array of strings | нет | id товара (соответсвует коду товара из b2b) |
+| id | array of strings | нет | id товара (соответсвует коду товара в b2b) |
 
-Запрос без параметров — возвращает полный актуальный прайс лист
+Запрос без параметров возвращает полный актуальный прайс-лист.
 
 ### Пример запроса
 
@@ -73,7 +73,7 @@ Content-Type: application/json; charset=utf-8
 |---|---|---|
 | data.groups | array | список групп/подгрупп для запрошенных id |
 | data.products | array | список товаров |
-| data.products.N.id | string | id товара (соответсвует коду товара из b2b) |
+| data.products.N.id | string | id товара (соответсвует коду товара в b2b) |
 | data.products.N.group | string | id группы товара |
 | data.products.N.name | string | Наименование товара |
 | data.products.N.article | string | SKU (артикул) товара |
